@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
 data = pd.read_csv(r'Data1.csv')
+print(data)
 data.set_index("Unnamed: 0") 
 data.plot(subplots=True)
 plt.show()
