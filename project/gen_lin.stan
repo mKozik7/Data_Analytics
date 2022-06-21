@@ -24,8 +24,12 @@ model {
 generated quantities {
    array [N] real eff;
    vector[N] log_lik;
+   array[N] real y_hat;
+
    for (i in 1:N) {
        eff[i] = normal_rng(mu[i], sigma);
        log_lik[i] = normal_lpdf(eff[i] | mu[i], sigma);
+      y_hat[i] = normal_rng(mu[i], sigma);
+
    }
 }
